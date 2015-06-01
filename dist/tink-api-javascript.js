@@ -306,6 +306,17 @@
 
 		var currentActiveElement = null;
 
+		var findElUrl = function(url){
+			var element;
+			for (var key in urlDomMap) {
+				if(key.indexOf(url) > -1){
+					element = urlDomMap[key];
+					break;
+				}
+			}
+			return element;
+		}
+		
 		var setActiveElemnt = function(el){
 			var activeElem;
 			if(el){
@@ -355,16 +366,6 @@
 
 		};
 
-		var findElUrl = function(url){
-			var element;
-			for (var key in urlDomMap) {
-				if(key.indexOf(url) > -1){
-					element = urlDomMap[key];
-					break;
-				}
-			}
-			return element;
-		}
 
 		var watchForPadding = function(){
 			window.addEventListener('resize', function(){
