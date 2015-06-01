@@ -1,4 +1,4 @@
-'use strict';
+;'use strict';
 (function(){
 	var root = this;
 
@@ -286,7 +286,11 @@
 					if(options.gotoPage){
 						if(force !== false){
 							var firstA = el.find('ul a:first');
-							document.location.href = firstA[0].href;
+							if(!subUrl){
+								document.location.href = firstA[0].href;
+								subUrl = false;
+							}
+							
 							setActiveElemnt(el.find('ul li:first'));
 						}
 					}
@@ -305,14 +309,21 @@
 
 
 		var currentActiveElement = null;
-
+		var subUrl = false;
 		var findElUrl = function(url){
 			var element;
-			for (var key in urlDomMap) {
+			var keys = Object.keys(urlDomMap);
+			keys.sort();
+			for (var i=keys.length-1; i>=0; i--) {
+			   	var key = keys[i]
 				if(url.indexOf(key) > -1){
 					element = $(urlDomMap[key]);
+					if(key !== url){
+						subUrl = true;
+					}
 					break;
 				}
+				
 			}
 			return element;
 		}
