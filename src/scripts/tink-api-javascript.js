@@ -357,11 +357,11 @@
 
 		var findElUrl = function(url){
 			var element;
-			[].forEach.call(urlDomMap,function (el,key) {
-					if(key.indexOf(url) > -1){
-						element = el;
-						break;
-					}
+			for (var key in urlDomMap) {
+				if(key.indexOf(url) > -1){
+					element = urlDomMap[key];
+					break;
+				}
 			}
 			return element;
 		}
