@@ -310,13 +310,13 @@
 			var element;
 			for (var key in urlDomMap) {
 				if(key.indexOf(url) > -1){
-					element = urlDomMap[key];
+					element = $(urlDomMap[key]);
 					break;
 				}
 			}
 			return element;
 		}
-		
+
 		var setActiveElemnt = function(el){
 			var activeElem;
 			if(el){
