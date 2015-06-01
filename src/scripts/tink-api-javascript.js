@@ -311,7 +311,7 @@
 			if(el){
 				activeElem = el;
 			}else{
-				activeElem = $(urlDomMap[tinkApi.util.getCurrentURL()]).parent();
+				activeElem = findElUrl(tinkApi.util.getCurrentURL()).parent();
 			}
 			if(activeElem && activeElem.hasClass('can-open')){
 				toggleAccordion(activeElem);
@@ -354,6 +354,17 @@
 			}
 
 		};
+
+		var findElUrl = function(url){
+			var element;
+			[].forEach.call(urlDomMap,function (el,key) {
+					if(key.indexOf(url) > -1){
+						element = el;
+						break;
+					}
+			}
+			return element;
+		}
 
 		var watchForPadding = function(){
 			window.addEventListener('resize', function(){
