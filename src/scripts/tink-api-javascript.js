@@ -309,7 +309,7 @@
 		var findElUrl = function(url){
 			var element;
 			for (var key in urlDomMap) {
-				if(key.indexOf(url) > -1){
+				if(url.indexOf(key) > -1){
 					element = $(urlDomMap[key]);
 					break;
 				}
