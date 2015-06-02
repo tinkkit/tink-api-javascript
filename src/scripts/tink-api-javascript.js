@@ -335,7 +335,7 @@
 			}else{
 				var lookup = findElUrl(tinkApi.util.getCurrentURL());
 				if(lookup === undefined || lookup === null){
-					activeElem = null;
+					activeElem = $();
 				}else{
 					activeElem = lookup.parent();
 				}
@@ -376,7 +376,7 @@
 		};
 
 		var calculateTop = function(){
-
+console.log($(options.topNav)[0].getBoundingClientRect().height,$(options.topNav).outerHeight(true))
 			if($(options.topNav).length === 1){
 				$(options.menuStr).css('top',$(options.topNav)[0].getBoundingClientRect().height);
 			}
@@ -386,7 +386,7 @@
 
 		var watchForPadding = function(){
 			window.addEventListener('resize', function(){
-				setTimeout(calculateTop, 150);
+				setTimeout(calculateTop, 155);
 			});
 		};
 

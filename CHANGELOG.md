@@ -16,7 +16,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.1.1] - 2015-06-02
 
 ### Fixed
-- Fixed error handling when no valid url
+- Fixed error handling when no valid url.
+- Fixed padding-top with fast resizing.
 
 ## [1.1.0] - 2015-06-01
 
