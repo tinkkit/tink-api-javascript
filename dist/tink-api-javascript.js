@@ -1,4 +1,4 @@
-;;'use strict';
+;;;'use strict';
 (function(){
 	var root = this;
 
@@ -248,7 +248,7 @@
 
 		$(window).bind('hashchange', function() {
 			if(!clickCheck){
-				currentTogggleElem = null;
+				//currentTogggleElem = null;
 				setActiveElemnt();
 			}
 			clickCheck = 0;
@@ -358,6 +358,7 @@
 					if(currentActiveElement.parent().parent()){
 						if(currentActiveElement.parent().parent().get(0) !== activeElem.parent().parent().get(0)){
 							currentActiveElement.parent().parent().removeClass(options.subActive);
+							//toggleAccordion(currentTogggleElem);
 						}
 					}
 					currentActiveElement.removeClass(options.activeCss);
