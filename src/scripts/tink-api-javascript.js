@@ -376,7 +376,6 @@
 		};
 
 		var calculateTop = function(){
-console.log($(options.topNav)[0].getBoundingClientRect().height,$(options.topNav).outerHeight(true))
 			if($(options.topNav).length === 1){
 				$(options.menuStr).css('top',$(options.topNav)[0].getBoundingClientRect().height);
 			}
