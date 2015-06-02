@@ -13,6 +13,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Security
 -->
+## [1.1.2] - 2015-06-02
+
+### Fixed
+- Fixed back handeling didn't closed the menu
+
 ## [1.1.1] - 2015-06-02
 
 ### Fixed
