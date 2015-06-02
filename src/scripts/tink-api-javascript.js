@@ -311,7 +311,7 @@
 		var currentActiveElement = null;
 		var subUrl = false;
 		var findElUrl = function(url){
-			var element;
+			var element = undefined;
 			var keys = Object.keys(urlDomMap);
 			keys.sort();
 			for (var i=keys.length-1; i>=0; i--) {
@@ -333,7 +333,13 @@
 			if(el){
 				activeElem = el;
 			}else{
-				activeElem = findElUrl(tinkApi.util.getCurrentURL()).parent();
+				var lookup = findElUrl(tinkApi.util.getCurrentURL());
+				if(lookup === undefined || lookup === null){
+					activeElem = null;
+				}else{
+					activeElem = lookup.parent();
+				}
+				
 			}
 			if(activeElem && activeElem.hasClass('can-open')){
 				toggleAccordion(activeElem);
