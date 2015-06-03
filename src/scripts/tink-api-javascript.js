@@ -1,4 +1,4 @@
-;;'use strict';
+'use strict';
 (function(){
 	var root = this;
 
@@ -174,6 +174,7 @@
 		var registerClick = function(){
 			$( '.nav-aside-section li a' ).each(function() {
 				$(this).on('click',function(){
+					subUrl = false;
 					setActiveElemnt($(this).parent());
 					clickCheck = 1;
 				});
@@ -249,6 +250,7 @@
 		$(window).bind('hashchange', function() {
 			if(!clickCheck){
 				//currentTogggleElem = null;
+				subUrl = false;
 				setActiveElemnt();
 			}
 			clickCheck = 0;
