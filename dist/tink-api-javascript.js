@@ -86,7 +86,7 @@
 		};
 
 		var findEl = function(elem,classStr){
-			return elem.find('.'+classStr);
+			return $(elem.find('.'+classStr)[0]);
 		};
 
 
