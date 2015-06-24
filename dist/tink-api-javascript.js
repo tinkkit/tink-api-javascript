@@ -270,6 +270,22 @@
 			currentTogggleElem = null;
 		};
 
+		function isElementInViewport (el) {
+		    //special bonus for those using jQuery
+		    if (typeof jQuery === "function" && el instanceof jQuery) {
+		        el = el[0];
+		    }
+
+		    var rect = el.getBoundingClientRect();
+
+		    return (
+		        rect.top >= 0 &&
+		        rect.left >= 0 &&
+		        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+		        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+		    );
+		}
+
 		var toggleAccordion = function(el,force){
 			if(currentTogggleElem !== null){
 				currentTogggleElem.removeClass(options.openCss);
@@ -281,6 +297,11 @@
 					closeAccordion(el);
 				}else{
 					if(currentTogggleElem !== null){
+						if(!isElementInViewport(currentTogggleElem.find('a:first'))){
+							$(element).find('aside').animate({
+								scrollTop: currentTogggleElem.offset().top
+							}, 1);
+						}
 						closeAccordion(currentTogggleElem);
 					}
 					openAccordion(el);
