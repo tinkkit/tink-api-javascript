@@ -173,7 +173,10 @@
 		var clickCheck = 0;
 		var registerClick = function(){
 			$( '.nav-aside-section li a' ).each(function() {
-				$(this).on('click',function(){
+				$(this).unbind('click.menu');
+			});
+			$( '.nav-aside-section li a' ).each(function() {
+				$(this).on('click.menu',function(){
 					subUrl = false;
 					setActiveElemnt($(this).parent());
 					clickCheck = 1;
@@ -468,6 +471,9 @@
 			},
 			reloadActive:function(){
 				setActiveElemnt();
+			},
+			reload:function(){
+				registerClick();
 			}
 		};
 	};
