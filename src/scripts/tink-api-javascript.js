@@ -166,7 +166,8 @@
 			openCss:'open',
 			accordion:true,
 			gotoPage:true,
-			speed:200
+			speed:200,
+            extraTop: 0
 		};
 
 		var options;
@@ -404,7 +405,7 @@
 
 		var calculateTop = function(){
 			if($(options.topNav).length === 1){
-				$(options.menuStr).css('top',$(options.topNav)[0].getBoundingClientRect().height);
+				$(options.menuStr).css('top',$(options.topNav)[0].getBoundingClientRect().height)+options.extraTop;
 			}
 
 		};
