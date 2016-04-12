@@ -405,7 +405,7 @@
 
 		var calculateTop = function(){
 			if($(options.topNav).length === 1){
-				$(options.menuStr).css('top',$(options.topNav)[0].getBoundingClientRect().height)+options.extraTop;
+				$(options.menuStr).css('top',$(options.topNav)[0].getBoundingClientRect().height+options.extraTop);
 			}
 
 		};
