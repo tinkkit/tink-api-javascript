@@ -1,6 +1,6 @@
 {
   "name": "tink-api-javascript",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": [
     "dist/tink-api-javascript.js"
   ],
