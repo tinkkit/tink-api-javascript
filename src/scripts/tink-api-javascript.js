@@ -473,6 +473,9 @@
 			reloadActive:function(){
 				setActiveElemnt();
 			},
+			recalculate:function(){
+				calculateTop();
+			},
 			reload:function(){
 				registerClick();
 			}
